@@ -1,0 +1,13 @@
+<!ENTITY extensiondeveloper.label "Extension Developer">
+<!ENTITY extdev.tb.restart.label "Restart Firefox">
+<!ENTITY extdev.tb.restart.tooltip "Click here to restart Firefox.">
+<!ENTITY extensiondeveloperToolbar.name  "Extension Developer">
+<!ENTITY extensiondeveloperToolbar.label "Extension Developer">
+<!ENTITY extdev.tb.clean.restart.label "Clean Up and Restart">
+<!ENTITY extdev.tb.clean.restart.tooltip "Clean component and extension cache files and restart Firefox.">
+<!ENTITY extdev.tb.reload.chrome.label "Reload Chrome w/o Restart">
+<!ENTITY extdev.tb.reload.chrome.tooltip "Reload chrome without restarting Firefox.">
+<!ENTITY extdev.tb.load.unpacked.ext.label "Load Unpacked Extension...">
+<!ENTITY extdev.tb.load.unpacked.ext.tooltip "Loads unpacked extension for development.">
+<!ENTITY extdev.tb.build.ext.label "Build Extension...">
+<!ENTITY extdev.tb.build.ext.tooltip "Builds extension by adding source files into jar and creating XPI file.">

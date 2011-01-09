@@ -1,0 +1,6 @@
+content   extensiondeveloper                 chrome/content/
+skin      extensiondeveloper   classic/1.0   chrome/skin/
+locale    extensiondeveloper   en-US         chrome/locale/en-US/
+
+
+overlay   chrome://browser/content/browser.xul   chrome://extensiondeveloper/content/ff-overlay.xul
