@@ -57,35 +57,26 @@ com.vivekanandb.adh = function () {
 		},
 
 		cleanAndRestartApp: function() {
-		  //remove compreg.dat file
-		  var file = Components.classes["@mozilla.org/file/directory_service;1"].
-							 getService(Components.interfaces.nsIProperties).
-							 get("ProfD", Components.interfaces.nsIFile);
-		  file.append("compreg.dat");
-		  if(file.exists()) {
-				file.remove(false);
-		  }
-		  
-		  //remove xpti.dat file
-		  file = Components.classes["@mozilla.org/file/directory_service;1"].
-							 getService(Components.interfaces.nsIProperties).
-							 get("ProfD", Components.interfaces.nsIFile);
-		  file.append("xpti.dat");
-		  if(file.exists()) {
-				file.remove(false);
-		  }
-
-			//remove extension cache
-			file = Components.classes["@mozilla.org/file/directory_service;1"].
-							getService(Components.interfaces.nsIProperties).
-							get("ProfD", Components.interfaces.nsIFile);
-			file.append("extensions.cache");
-			if(file.exists()) {
-				file.remove(false);
+			const XRE = Components.classes["@mozilla.org/xre/app-info;1"].getService(Components.interfaces.nsIXULRuntime);
+			if(typeof XRE.invalidateCachesOnRestart == 'function') {
+				XRE.invalidateCachesOnRestart();
+			} else {
+				const files = ['compreg.dat','xpti.dat','extensions.cache','extensions.ini','extensions.rdf'];
+				
+				for each(var name in files) {
+					var file = Components.classes["@mozilla.org/file/directory_service;1"]
+						.getService(Components.interfaces.nsIProperties)
+						.get("ProfD", Components.interfaces.nsIFile);
+					
+					file.append(name);
+					if(file.exists()) {
+						file.remove(false);
+					}
+				}
 			}
-
-		  //restart
-		  this.restartApp();
+			
+			// Restart
+			this.restartApp();
 		},
 
 		reloadChrome: function()
