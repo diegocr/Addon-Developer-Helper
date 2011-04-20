@@ -1,6 +1,9 @@
-content   extensiondeveloper                 chrome/content/
-skin      extensiondeveloper   classic/1.0   chrome/skin/
-locale    extensiondeveloper   en-US         chrome/locale/en-US/
+content   addondeveloperhelper                 chrome/content/
+content   addondeveloperhelper                 chrome/content/ contentaccessible=yes
+skin      addondeveloperhelper   classic/1.0   chrome/skin/
+locale    addondeveloperhelper   en-US         chrome/locale/en-US/
 
+overlay   chrome://browser/content/browser.xul   chrome://addondeveloperhelper/content/ff-overlay.xul
+overlay	  chrome://navigator/content/navigatorOverlay.xul	chrome://addondeveloperhelper/content/ff-overlay.xul
 
-overlay   chrome://browser/content/browser.xul   chrome://extensiondeveloper/content/ff-overlay.xul
+style     chrome://global/content/customizeToolbar.xul	chrome://addondeveloperhelper/skin/overlay.css

@@ -1,22 +1,9 @@
-/* This is just an example.  You shouldn't do this. */
-#extensiondeveloper-hello
-{
-  color: red ! important;
+@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+
+#addondeveloperhelper-toolbar-button {
+	list-style-image: url("chrome://addondeveloperhelper/skin/adh32.png");
 }
-#extensiondeveloper-toolbar-button
-{
-  list-style-image: url("chrome://extensiondeveloper/skin/toolbar-button.png");
-  -moz-image-region: rect(0px 24px 24px 0px);
-}
-#extensiondeveloper-toolbar-button:hover
-{
-  -moz-image-region: rect(24px 24px 48px  0px);
-}
-[iconsize="small"] #extensiondeveloper-toolbar-button
-{
-  -moz-image-region: rect( 0px 40px 16px 24px);
-}
-[iconsize="small"] #extensiondeveloper-toolbar-button:hover
-{
-  -moz-image-region: rect(24px 40px 40px 24px);
+
+toolbar[iconsize="small"] #addondeveloperhelper-toolbar-button {
+	list-style-image: url("chrome://addondeveloperhelper/skin/adh16.png");
 }

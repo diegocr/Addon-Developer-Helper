@@ -1,8 +1,4 @@
-if(!com) var com = {};
-if(!com.vivekanandb) com.vivekanandb = {};
-
-com.vivekanandb.adh = function () {
-	var extensiondeveloper = {
+var addondeveloperhelper = {
 		onLoad: function() {
 		},
 
@@ -57,6 +53,7 @@ com.vivekanandb.adh = function () {
 		},
 
 		cleanAndRestartApp: function() {
+			// diegocr's way ;-)
 			const XRE = Components.classes["@mozilla.org/xre/app-info;1"].getService(Components.interfaces.nsIXULRuntime);
 			if(typeof XRE.invalidateCachesOnRestart == 'function') {
 				XRE.invalidateCachesOnRestart();
@@ -140,11 +137,7 @@ com.vivekanandb.adh = function () {
 					fp.writeToFile(file, dir);
 					this.restartApp();
 				}
-			} catch(e) { alert("Problem! Could not deploy extension. File I/O Error!"+e); }
+			} catch(e) { alert("Problem! Could not deploy extension. File I/O Error! "+e); }
 		}
-	};
-	
-	return extensiondeveloper;
-}();
-
-window.addEventListener("load", com.vivekanandb.adh.onLoad, false);
+};
+window.addEventListener("load", addondeveloperhelper.onLoad, false);

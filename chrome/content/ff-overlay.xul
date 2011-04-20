@@ -1,31 +1,32 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0"?>
 <?xml-stylesheet href="chrome://browser/skin/global.css" type="text/css"?>
-<?xml-stylesheet href="chrome://extensiondeveloper/skin/overlay.css" type="text/css"?>
-<!DOCTYPE overlay SYSTEM "chrome://extensiondeveloper/locale/overlay.dtd">
-<overlay id="extensiondeveloper-overlay" xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
-  <script src="utils.js"/>
-  <script src="overlay.js"/>
-
-  <stringbundleset id="stringbundleset">
-    <stringbundle id="extensiondeveloper-strings" src="chrome://extensiondeveloper/locale/overlay.properties"/>
-  </stringbundleset>
-
+<?xml-stylesheet href="chrome://addondeveloperhelper/skin/overlay.css" type="text/css"?>
+<!DOCTYPE overlay SYSTEM "chrome://addondeveloperhelper/locale/overlay.dtd">
+<overlay id="addondeveloperhelper-overlay" xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+	<script type="application/x-javascript" src="chrome://addondeveloperhelper/content/utils.js" />
+	<script type="application/x-javascript" src="chrome://addondeveloperhelper/content/overlay.js" />
+	
+	<stringbundleset id="stringbundleset">
+		<stringbundle id="addondeveloperhelper-strings" src="chrome://addondeveloperhelper/locale/overlay.properties"/>
+	</stringbundleset>
+	
 	<popupset id="mainPopupSet">
 		<menupopup id="adh-popup" position="after_end">
-		  <menuitem id="extdev-tb-load-unpacked-ext" class="menuitem-iconic" label="&extdev.tb.load.unpacked.ext.label;" tooltiptext="&extdev.tb.load.unpacked.ext.tooltip;" oncommand="com.vivekanandb.adh.onToolbarButtonLoadUnpackedExtCommand();"/>
-		  <menuitem id="extdev-tb-build-ext" class="menuitem-iconic" label="&extdev.tb.build.ext.label;" tooltiptext="&extdev.tb.build.ext.tooltip;" oncommand="com.vivekanandb.adh.onToolbarButtonBuildExtCommand();"/>
-		  <menuseparator/>
-		  <menuitem id="extdev-tb-restart" class="menuitem-iconic" image="chrome://extensiondeveloper/skin/restart20.png" label="&extdev.tb.restart.label;" tooltiptext="&extdev.tb.restart.tooltip;" oncommand="com.vivekanandb.adh.onToolbarButtonRestartCommand();"/>
-		  <menuitem id="extdev-tb-clean-restart" class="menuitem-iconic" image="chrome://extensiondeveloper/skin/cleanRestart20.png" label="&extdev.tb.clean.restart.label;" tooltiptext="&extdev.tb.clean.restart.tooltip;" oncommand="com.vivekanandb.adh.onToolbarButtonCleanRestartCommand();"/>
-		  <menuitem id="extdev-tb-reload-chrome" class="menuitem-iconic" image="chrome://extensiondeveloper/skin/reloadChrome20.png" label="&extdev.tb.reload.chrome.label;" tooltiptext="&extdev.tb.reload.chrome.tooltip;" oncommand="com.vivekanandb.adh.onToolbarButtonReloadChromeCommand();"/>
+			<menuitem id="adevhelp-tb-load-unpacked-ext" class="menuitem-iconic" label="&adevhelp.tb.load.unpacked.ext.label;" tooltiptext="&adevhelp.tb.load.unpacked.ext.tooltip;" oncommand="addondeveloperhelper.onToolbarButtonLoadUnpackedExtCommand();"/>
+			<menuseparator/>
+			<menuitem id="adevhelp-tb-restart" class="menuitem-iconic" image="chrome://addondeveloperhelper/skin/restart20.png" label="&adevhelp.tb.restart.label;" tooltiptext="&adevhelp.tb.restart.tooltip;" oncommand="addondeveloperhelper.onToolbarButtonRestartCommand();"/>
+			<menuitem id="adevhelp-tb-clean-restart" class="menuitem-iconic" image="chrome://addondeveloperhelper/skin/cleanRestart20.png" label="&adevhelp.tb.clean.restart.label;" tooltiptext="&adevhelp.tb.clean.restart.tooltip;" oncommand="addondeveloperhelper.onToolbarButtonCleanRestartCommand();"/>
+			<menuitem id="adevhelp-tb-reload-chrome" class="menuitem-iconic" image="chrome://addondeveloperhelper/skin/reloadChrome20.png" label="&adevhelp.tb.reload.chrome.label;" tooltiptext="&adevhelp.tb.reload.chrome.tooltip;" oncommand="addondeveloperhelper.onToolbarButtonReloadChromeCommand();"/>
 		</menupopup>
 	</popupset>
-
-  	<statusbar id="status-bar">
-    <statusbarpanel id="adh-statusbar-button" style="statusbarpanel-iconic">
-			<image context="adh-popup" src="chrome://extensiondeveloper/skin/adh16.png" popup="adh-popup"/>
-    </statusbarpanel>
-  </statusbar>
-  
-  <vbox id="installRdfPtr"/>
+	
+	<statusbar id="status-bar">
+		<statusbarpanel id="adh-statusbar-button">
+			<image context="adh-popup" src="chrome://addondeveloperhelper/skin/adh16.png" popup="adh-popup"/>
+		</statusbarpanel>
+	</statusbar>
+	
+	<toolbarpalette id="BrowserToolbarPalette">
+		<toolbarbutton id="addondeveloperhelper-toolbar-button" label="&addondeveloperhelper.label;" class="toolbarbutton-1" popup="adh-popup"/>
+	</toolbarpalette>
 </overlay>
